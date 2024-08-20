@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>circular_lifo_buffer</name>
+  <version>0.9.0</version>
+  <description>The circular_lifo_buffer package</description>
+
+  <maintainer email="biemueller@sim.tu-darmstadt.de">Felix Biemüller</maintainer>
+
+  <license>MIT</license>
+
+  <author email="biemueller@sim.tu-darmstadt.de">Felix Biemüller</author>
+  
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <test_depend>gtest</test_depend>
+
+  <doc_depend>doxygen</doc_depend>
+</package>

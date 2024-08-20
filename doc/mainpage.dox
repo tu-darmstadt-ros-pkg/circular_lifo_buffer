@@ -1,0 +1,17 @@
+/** \mainpage Circular LIFO Buffer
+
+\section intro_sec Usage
+  The implementation of the circular LIFO buffer header-only and all the necessary code for using it is contained within circular_lifo_buffer::CircularLifoBuffer.
+
+	For examples on how to use the buffer you can have a look at the unit tests in the directory test. 
+*/
+
+/**
+ * @namespace circular_lifo_buffer 
+ * @brief namespace of the circular_lifo_buffer package
+ */
+
+/**
+ * @namespace circular_lifo_buffer::test 
+ * @brief namespace of the unit tests for the circular_lifo_buffer package
+ */
