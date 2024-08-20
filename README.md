@@ -89,9 +89,10 @@ Further examples for using the API and a multithread setup can be found in the u
 ## Installation
 The only required file to use the buffer is circular_lifo_buffer.h, as it is implemented as header-only class.
 For further details you can refer to the Doxygen documentation. The usage can also be seen in the unit tests. 
-Besides using the header file, you can integrate the package into a [catkin](http://wiki.ros.org/catkin) workspace.
+Besides using the header file, you can integrate the package into a [catkin](http://wiki.ros.org/catkin) or [ament](https://design.ros2.org/articles/ament.html) workspace.
 The implementation has no ROS dependencies.
-For building the unit tests you can use `catkin test circular_lifo_buffer`.
+For building the unit tests you can use `catkin test circular_lifo_buffer` for catkin and `colcon test --packages-select circular_lifo_buffer` for ament.
+The catkin version of this package can be found on the "catkin_version" branch.
 
 ## Verification Method
 Besides the implemented unit tests, the concept of the buffer was modeled in PROMELA and verified using [spin](https://spinroot.com/spin/whatispin.html).

@@ -1,6 +1,6 @@
 #
-# Adds option to generate unit tests using gtest or catkin test. Therefore, this
-# macro is fully compliant with the catkin test compile options. In order to
+# Adds option to generate unit tests using gtest or ament test. Therefore, this
+# macro is fully compliant with the ament test compile options. In order to
 # generate the tests manually, the CMake build flag ``BUILD_TEST`` must be set,
 # e.g. ``-BUILD_TEST=ON``. The headers and sources can be defined outside as well
 # as given as argument to the macro. It assumes that the gtest main function is
@@ -45,7 +45,7 @@ function(add_gtest_compile)
     ${ARGN}
   )
 
-  if(BUILD_TEST OR CATKIN_ENABLE_TESTING)
+  if(BUILD_TEST OR BUILD_TESTING)
     message(STATUS "Building Tests Enabled")
     find_package(GTest QUIET)
 
@@ -89,11 +89,10 @@ function(add_gtest_compile)
     target_link_libraries(${PROJECT_NAME}-test ${PROJECT_NAME} gtest gtest_main pthread)
 
     ## Add gtest based cpp test target and link libraries
-    ## build catkin test suite
-    if(CATKIN_ENABLE_TESTING)
-      find_package(rostest REQUIRED)
-
-      catkin_add_gtest(${LINK_TARGET} ${GTEST_MAIN} ${TEST_SOURCES})
+    ## build ament test suite
+    if(BUILD_TESTING)
+    find_package(ament_cmake_gtest REQUIRED)
+    ament_add_gtest(${LINK_TARGET} ${GTEST_MAIN} ${TEST_SOURCES})
 
       if(TARGET ${PROJECT_NAME}-test)
         if(DEFINED GTEST_COMPILE_INCLUDE_PATH)
